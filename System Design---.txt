@@ -1,0 +1,108 @@
+System Design---
+
+capacity planning-----
+
+Capacity planning can tell us if a proposed design is feasible .it allows engineers to foresee potential  bottlenecks in system performance or scalability assests data storage needs network bandwidth requirements, and predict the projected cost of resources. this verifies that aspects like latency throughput and availability align with the non functional requirements.
+
+a design might seem functionality feasible but could have operational challenges for example if the system needs  to handel surges in demand,
+it might need a lot of extra resources.This could make it prohibitively 
+expensive to run.
+
+effective capacity planning shows a deep understanding of system design. it indicates an engineers knowledge of various design options and technologies and the pros and cons of each it also reflects their ability to anticipate potential problems and find appropriate solutions this can lead to the development of system that work better and are more efficient.
+
+when designing a large scale system it important to think about capacity planning from the very begineening by understanding what the system needs to do from the cvery beginning. By understanding what the system needs to do and how powerful it needs to be, engineers can plan and build systems that are sclable and efficient.
+
+when designing a large scale system it important to think about capacity planning from the very beginning. By understanding what the system needs to do and how powerful it needs to be engineers can plan and build systems that are scalable and efficient.
+
+capacity planning parts
+
+-Throughput calculation-throughput hint scenario 
+                       -throughput through DAU scenario
+                       -peak QPS
+                       -estimating SERver requirement
+-understanding request sizes
+
+-Bandwidth & data in transit-client to server
+                            -server to client
+-storage & data at rest
+-caching-caching reads
+        -caching the alleviate write bottlenecks
+        -Effective cache management
+
+-operating capacity-Alerts& monitoring
+                  - staying vigilance
+
+-----------------
+
+Topic 2 -- Horizontal and Vertical Scaling System Design 
+
+ vertical scaling-- increases in processing power 
+ 
+ Horizontal scaling-- increase in number of machines 
+
+-- Horizontal scalability and vertical scalability are two approaches to scale any system including Microservices to handel increased load or to meet performance requirement.
+
+The main difference between them lies in  how they achieve scaling.
+
+Horizontal scalability also know as scale out  scale your system by adding more nodes or servers to distributes the load across them .
+
+Horizontal scaling is achieved by adding more identical machines to the existing system which allow for better distribution of load and improved redundancy.
+
+This was though say 5 to 10 years ago when you have to manually acquire server and install all the software create new configuration and deploy your application but now in this age of cloud computing and tools like Terraform , Ansible and Puppet you can easily add more machine for your application without much fuss.
+
+on the other hand Vertical Scalabilty also know as scale up involves adding more resources (CPU,RAM, STORAGE) to a single node or server to handel increased load.
+
+this approach allows for an increase in the capacity of an existing node which can handel more requests.
+
+
+important  things regarding this topics----
+
+Load Balancer-- Horizontal scalabity requires the use of load balancer to distribute incoming requests across multiple servers while vertical scalability does not which  is  often a deciding factor . if your architecture doesn't permit load balancing then t=you only have to scale vertically .
+
+Higher Scalability 
+
+Horizontal sclability can achieve higher levels of scalability as the number of nodes can be increased almost indefinitely while vertical scalability has limitations due to the maximum capacity of  a single node or server.
+
+Architecture preference-
+
+Horizontal scalability is commonly associated with distributed systems, while vertical scalability is usually associated with monolithic systems.
+
+Handling load-
+Horizontal scalability is more suitable for handling unpredictable or varying loads while vertical scalability is more suitable  for handling predictable loads.
+
+Complexity-
+Horizontal scalability involves adding more nodes or servers  to a system in order to handel increased load or traffic.However, horizontal scalability
+can be more complex to implement than vertical scalability,as it often requires more sophisticated load balancing and coordination mechanism between nodes.
+
+Additonaly, horizontal scalability may not always result in alinear increase in performance since additional nodes may introduce more overhead or communication delays.
+
+on the other hand vertical scalability involves increasing the resources suchas CPU , RAM , STORAGE  avialbale to a single server or instance in order to handel increased load or traffic.
+
+The main advantage of vertical scalabilty is that it is often easier and less complex to implemt than horizontal scalability since it involves simply adding  more resources to an existing system.
+
+However vertical scalability is that it is often easier and less complex to implement than horizontal scalability since it invovlves simply adding more resources to an exixting system.
+However, vertical scalability may be limited by the physical capacity of the hardware running the system and may not able to scale indefinitely.
+
+Additonally vertical scalabilty can be more expensive than horizontal scalability since it often involves upgrading to more powerful or specialized hardware.
+
+Horizontal or vertical scaling which one is better for Microservices in cloud?
+
+horizontal scaling is considered better for microservices in the cloud because it allows you to add more instances of service to ahndel increases load.
+
+with   horizontal scaling you can distribute the workload across multiple instances which helps to ensure that the service remains available even if one instance goes down.
+
+Additionally horiztal scaling is more cost-effective because it allows you to add resources on an as needed basis rather than requiring you to invest in more powerful hardware upfront.
+
+vertical scaling on the other hand can be more expensive and less flexible because it require upgrading the resources on a single instance to handle inceased load.
+
+this approach can result in downtime if the instance needs to be taken offline for maintenance or upgrades and it may not be sufficient to handel sudden spikes in traffic.
+
+However vertical scaling can be appropriate in certain situations where the workload is predictable and consistent and it may be more straightforward to manage a single more powerful instance than multiple  smaller instances.
+ 
+
+-------important points
+lternatively, utilizing distributed databases, containerization with orchestration tools, and implementing caching mechanisms are effective approaches. These methods collectively enable the efficient handling of increasing data, traffic, or request loads while ensuring optimal performance and resource utilization
+
+
+
+

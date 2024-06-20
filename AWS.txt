@@ -1,0 +1,133 @@
+AWS
+---------
+START with cloud computing -it  is refer to the delivery of computing services -including servers, storage, databases , networking , software and more --over the internet ("the cloud") 
+
+cloud computing offers several advantages-
+
+Scalability-users can easily scale resource up or down based on demand.
+this allows for flexibity.
+
+Cost-effectiveness: Cloud computing eliminates the need for large upfront investments in hardware and infrastructure. Users can pay for resources on a pay-as-you-go basis, reducing capital expenses.
+
+Accessibility: Cloud services are accessible from anywhere with an internet connection, enabling remote access and collaboration.
+
+Reliability: Cloud providers typically offer high levels of reliability and uptime, often backed by service level agreements (SLAs). They have redundant systems and data centers to ensure continuous operation.
+
+Security: Cloud providers invest heavily in security measures to protect data and infrastructure. They offer features like encryption, identity and access management, and compliance certifications to ensure data security and privacy.
+
+
+
+Cloud computing can be categorized into three main service models:
+
+Infrastructure as a Service (IaaS): Provides virtualized computing resources over the internet. Users can rent virtual machines, storage, and networking infrastructure on-demand.
+
+Platform as a Service (PaaS): Provides a platform allowing customers to develop, run, and manage applications without dealing with the underlying infrastructure. PaaS offerings include development tools, database management systems, and middleware.
+
+Software as a Service (SaaS): Delivers software applications over the internet on a subscription basis. Users can access the software through a web browser without needing to install or maintain it locally.
+
+
+public vs  private  vs hybrid cloud 
+
+Public, private and hybrid clouds are different deployment  models for cloud computing each offering unique benefits and use cases.
+
+1 public cloud- 
+  in a public cloud models cloud services are provided by third party vendors over the internet. These  services are avialble to anyone who wants to use or purchase them.
+Resource in public cloud are shared among multiple users leading to cost savings as users only pay for the resources they consume on pay as  you go basis.
+
+examples of public cloud providers include AMAZON WEB SERVICES 
+
+public cloud are suitable for a wide range of use cases including web hosting , development and testing , big data, analytics, and software as a service,(SAAS)
+
+2. PRIVATE CLOUD
+  
+  In a private cloud model cloud services are provisioned  and dedicated
+  to a single organization entity.
+  
+Private cloud  offer greater control security and customization compared to public cloud. They are often used by organization with strict regulatory complilance requirement or specify security concerns.
+
+while private clouds may require higher upfront investements in infrastructure and management they provide greater control over data and resources.
+private clouds are suitable for industries. such as finance healthcare and government where data privacy and security are paramount.
+
+3. Hybrid cloud.
+
+   A hybrid cloud model  combines elements of both public and private clouds, allowing data and applications to be shared between them.
+
+organization can levearage the scalability and cost effectiveness of public clouds for non-sensitve workloads while keeping sensitive data and mission -critical applications in a private cloud.
+
+Hybrid clouds provide flexibility enabling organizations to dynamically allocate workloads between on premisses infrastructure and public cloud services based on demand and requirements.
+
+They also facilitate cloud  brusting where organisations can scale their private cloud resources into the public cloud during periods of peak demeand.
+
+Hybrid clouds require robust networking and integration capabilities to ensure seamless communication between on permises and cloud environments
+
+choosing the right cloud deployment  model depends on factors such as security compliance performance, sclability and cost considerations as well as the specific needs and objectives of the organization.
+
+
+Introduction to AWS 
+
+AWS is a comprehensive and widely used cloud computing platform provided by AMAZON.com It offers a vast array of services that enable organizations to build deploy and manages various types of applications and infrastructure in the cloud. Here an introduction to  some key asspects of AWS.
+
+Global infrastructure AWS operates a global network of data centers across multiple geographic regions. Each region consists of multiple Availability ZONES which are isolated locations with redundant power, networking, and connectivity. This infrastructure ensures high availability fault tolerance,
+and low latency access to AWS services.
+
+
+2. Compute Services.
+
+AWS provides several compute services including 
+Amazon EC2 Elastic compute cloud. Virtual servers  in the cloud that can be provisioned with various configuarations of CPU, Memory ,storage, and networking
+
+AWS LAMDAAWS lamda: serveless computing service that allows you to run code.
+
+Storage service:
+
+ AWS lamda :  severless computing service that allows you to 
+
+--------------------------------------
+What is AWS?
+AWS as a gigantic digital playground in the sky made by a company called amazon it like a super high-tech clubhouse where you can do all sorts of coll stuff with computers and the internet.
+
+-----------------------------------------------
+The workflow structure in Amazon web Services typically follows a set of steps or stages that are designed to deploy manage and maintain cloud based applications and infrastructure efficeiently, 
+
+1 planning and design 
+ - define the requirement and objective of the project 
+ - design the architecture of the aes infrastructure considering factors
+  such as scalability, security, and cost optimization.
+-select the AWS services and resources needed to implement the desired architecture.
+
+2 Provisioning:
+  -create an AWS account if you haven't already done so.
+  -provision the necessary AWS resources and services based on the designed architecture. this may include virtual servers EC2,RDS,S3,VPC and more.
+-Configure access control and security settings to restrict access to resources and protect sensitive data.
+
+3 Deployment
+  -Deploy your application code and configurations to the provisioned infrastructure.
+-Use deployment tools like AWS CodeDeploy or AWS Elastic Beanstalk to automate the deployment  process and ensure consistency across envirnments.
+
+- Monitor the deployment process for errors or issues and rollback changes if necessary.
+
+4.Monitor and Logging-
+  Set up monitoring and logging tools such as Amazon cloudwatch to track the performance, health, and utilization of  your AWS  resources and applications.
+
+-configure alarms and notifications to alert you of any anomalies or incidents.
+-Use logging services like AWS CloudTrail and AWS config to capture  and compiliance purposes.
+
+5.Scaling and Optimization
+  -monitor resource usage and performance metrics to identify bottlenecks and areas for optimization.
+-implement auto scaling policies to automatically adjust resource capacity based on demand.
+-optimize costs by using reserved instances, spot instances,or rightsizing resources to match workload requiremients more efficiently.
+-Continously review and refine the architecture and configurations to improve performance, reliability and cost effectiveness.
+
+6 Backup and Disaster Recovery:
+  -implement backup and data recovery stratergies to protect af=gainst data loss and minimize downtime in case of failures or disasters,
+
+-Use AWS services like Amazon S3 for storing backups and snapshots, and implement automated backup policies.
+-Test disaster recovery  plans regularly to ensure they are effective and up-to-date.
+
+7 Security and Compliance:
+  -implement security best practices and configure security controls to protect your AWS resources and data.
+- Use AWS identity and Acess Management(IAM) to manage user access and permission.
+ 
+  
+
+

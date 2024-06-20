@@ -1,0 +1,182 @@
+System Design of Redis  Easy level 
+
+Redis is an open source in memory data structure store used as a database cache and message broker. Redis provides data structures such as dtrings, hashes,lists,sets, wuth range queries, bitmaps, hyperloglogs , geospatial indexes, and streams. 
+
+Redis has built in replication , Lua scripting ,LRU eviction, transactions, and difffrent levels of on disk persistence and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
+
+so Redis can be used as a traditional monolithic and can be used as DISTRIBUTED SYSTEM AS S CLUSTER of nodes with sharding.
+
+Before talking about Redis i would explain some concepts and why we need these terms and techniques in our systems.
+
+What is memory caching and what is the value adding by caching
+
+Apache is like a short term memory . it is typically faster than the original data source. Accesing data from memory is faster than from a hard disk.
+Caching means saving frequently accessed data in memory so the value that is added by caching is retrieving data fastly and reduce calling the original data source it might be SQLDB because the complexity time of reding data will be O(1) as a direct access operation by key in memory like hash tables.
+
+so Redis is a system that offers to us a caching system in both environments monolithics  and distributed.
+
+How Redis Works?
+
+All Redis data resides in the server main memory , in contrast to databases such as PostgreSQL , SQL server, and others that store most data on disk.
+In comparison to traditional disk based databases where most operations require roundtrip to disk, in memory data stores such as Redis don't suffer the same  penalty. They  can therefore support an order of magnitude  more operations and faster response times. The result is blazing fast performance with average read or writes operations talking less than a milli second and support for millions of operations per second.
+
+So as Redis is faster than traditional DB can we consider it first source of truth?
+
+The answer is NO we can not consider Redis as the first source of truth it always comes as second support to improve the performance of the system because from the CAP theorem perpective Redis is neither  highlt avialble nor consistent. to understand why lets explain how Redis sync the data from memory to disk as the disk can consider consistency.
+
+Redis data lives in memory which makes it us vry fast to write to and read from but in case of server crashes you lose all that in the memory for some applications it ok to lose these data in case of crash but for the other aps it important to be able to reload Redis data after server  restarts.
+
+Redis provides different range of persistence options 
+
+RDB(Redis Database)-
+
+The RDB persistence performs point in time snapshots of your dataset at specified intervals.
+
+AOF(Append Only file)--
+
+The AOF persistence logs every write operation received by the server that will be [layed again at server startup reconstructing the original dataset. commands are logged using the same format as the Redis protocol; itsef, in an append only fashin . Redis is able to rewrite the log in the background when it gets too big.
+
+No Persistence--
+
+If you wish you can disable persistence completely, if you want your data to just exist as long as the server is running.
+
+RDB + AOF---
+
+It is possible to combine both AOF AND RDB in the same instance. Notice that in this case when Redis restarts the AOF file will be ued to reconstruct the original dataset it is guaranteed to be the most complete.
+
+so the most important part there is understanding the trade offs between the RDB and AOF persistence as the NO persistence is very clear that non level of consistency there even strong or bad consistency.
+
+RDB advantages:
+
+RDB is very compact single file point in time  representation of you Redis data. RDB files are perfect for backups . For instance, you may want to archive you RDB  files every hour for thr latest 24 hours and to save an RDB files evry hour fort the latest 24 hours and to save and RDB snapshot every day for 30 days. THIS allows you to easily restore different versions of the data set in case of disasters.
+
+Rdb is very good for disaster recovery, being a singe compact file that can be transferred to far data centers.
+
+Rdb allows faster restarts with big datasets compared to AOF
+
+RDB disadvantages:---
+
+RDB is NOT good if you need to minimize the chance of data loss in case Redis stops working like in case of power outage.
+However you will usually create an RDB snapshot every five minutes or more so in case of Redis stopping working without a correct shutdown for any.
+reason you should be prepread to lose the latest minutes of data.
+
+-------------------------------------------
+
+
+The Redis server is a program that runs and stores data in memory.
+You can just  connect to that server and can use it ro store and retrieve  data faster.
+For that reason Redis is not used for persistent storing of data as complete data will be lost if the system crashes.
+
+Redis is scalable as you run multiple instances of the server.
+
+It is often used as cache that stores data temporarily and provides faster access to frequently used data.
+
+
+If the data in the databse is not changing much you can just store the result of the query in redis server and then  instead of querying the database which is going to tske 100-1000 millisecond you can just cheak wheather the result  of the query is already available in redis or not  and return it result which is going to be must faster as it is already avialble in the memory.
+
+In a messaging app, Redis can be used to store the last five messaging that the user has sent and received using the built list data structure provided in Redis.
+
+Advantages of Redis server:
+
+High Performance: Redis Excels in terms of performance due to its in memory nature . it can deliver extremely fast read and write operations making it suitable for scenarios where low latency is critical.
+
+Simple and easy to use API 
+-Redis has a straightforward API that consist of simple and intuitive commands Making it easy for developers to use and integrate into their applications.
+
+3 Data Structures:
+  Redis supports a variety of data structures in cluding strings, lists, sets, hashes, and more This versality allows developers to model their data more effectively choosing the right data structure for the task at hand.
+
+4 Atomic Operations:
+  Redis supports atomic operations on these data structures making it a great fit for scenarios that require consistency and relaiblity in muli step operations.
+
+5 Persistence Options:
+ While Redis is an in memory database, it provides persistence options susch as snapshots and append only files This allows users to configure the level of durability needed for their specific use case.
+
+6 Replication and High Avialblity:
+Redis supports master slave Apllication enabling the creation of replicas of the master server. This  Provides high availability and fault  tolerance in case the master node fails.
+
+--------------------------------------
+How to Start Redis Server?
+To start the Redis server on your machine you need the run the below command in the terminal :
+
+redis-server
+
+The above command will start the server on port 6379 which is the default port for the Redis server.
+
+You can connect to the redis-server and use it to retrieve and store data using the below command.
+
+redis-cli
+-----------------------------------------------
+
+Redis Data Storage Types
+
+Redis Allows  developers t store , retrive and manipulate data in various data structures  such as strings , bitmaps, bitfields, hashes, lists, sets, sorted sets, geospatial, hyper logs and streams.]
+-------------------------------
+Benefits of using Redis:
+All Redis data resides in the servers again memory in contrast to databases such as PostgreSQL, SQL server and others that store most data on disk.
+Redis can therefore support  higher orders of magnitude of operations and faster response
+
+--------------------------------------------
+
+why redis is fast- rock solid, easy to use.--in memory databse , single threaded 
+single threaded means it do one task at a time.
+like if i define many task they do the task one task then next task like that by redis is more compitable.
+
+So, IO multiplexing in this scenario allows you to efficiently manage multiple tasks even though you can only handle one task (or call) at a time.
+
+use cases - 
+caching object to  speed up web application.
+improve response time
+
+Redis use as session storage.  session data stored in redis in a web application with unique id  we call as a cookie.
+web server takes data from redis with seesion id.
+in redis  data is replicate to back instance in case if the main instance is destroyed then the backup instance is use for the on going to take over the traffic.
+
+Distributed lock-
+
+Redis offers a simple yet effective mechanism for implementing distributed locks using its basic commands. Here's how it works:
+
+SETNX (Set If Not eXists): Redis provides a command called SETNX, which sets a key's value if the key does not already exist. This command is crucial for implementing distributed locks.
+
+Expiry time: When setting a lock using SETNX, you can also specify an expiry time for the lock. This ensures that the lock will be automatically released after a certain period, preventing deadlocks in case a client crashes or fails to release the lock.
+
+Unique identifier: Each client that acquires the lock should use a unique identifier (such as a randomly generated UUID) as the value when setting the lock key. This helps prevent other clients from mistakenly releasing the lock acquired by a different client.
+
+Release lock: To release the lock, the client simply needs to delete the lock key using the DEL command. However, it's essential to ensure that the client only releases the lock if it still holds the lock (i.e., if the value associated with the lock key matches the unique identifier used to acquire the lock).
+
+Here's a basic example in pseudocode to illustrate how to implement a distributed lock using Redis:
+
+python
+Copy code
+# Acquire lock
+lock_key = "my_lock"
+unique_identifier = generate_unique_identifier()
+expiry_time = 10  # Lock expiry time in seconds
+success = redis.setnx(lock_key, unique_identifier)
+if success:
+    redis.expire(lock_key, expiry_time)
+    # Lock acquired successfully
+
+# Release lock
+if redis.get(lock_key) == unique_identifier:
+    redis.del(lock_key)
+    # Lock released successfully
+else:
+    # The client no longer holds the lock or the lock has expired
+By using Redis commands like SETNX, EXPIRE, GET, and DEL, you can implement a distributed lock mechanism that allows multiple clients to coordinate and synchronize access to shared resources in a distributed environment effectively.
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+

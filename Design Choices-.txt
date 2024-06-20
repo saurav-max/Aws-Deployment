@@ -1,0 +1,11 @@
+Design Choices-
+
+JSON Web Encryption is a standard for exchanging encrypted data using JSON and Base64 . JWE allows you to encrypt a JWT payload so that only the intended recipient can read it. JWE also payload so that only the intended recient can read it. JWE also provides integrity and authentication checks.
+
+JWE-JWE is not supported by all languages by all languages and frameworks.
+
+JWT-JWE   cannot be invalidated intentionally without storing the token in a databses or cache store defeating the purpose of using JWT in the first place.
+
+Workaround would involve shortening expiry time which would increase the load on the database e verytime one needs to refreash the token 
+
+large payloads in scenarios of storing additional details like access control role id etc via JWT-JWE WOULD INCREASE REQUEST size which is not ideal for mobile devices with limited bandwidth.

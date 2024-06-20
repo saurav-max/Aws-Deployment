@@ -1,0 +1,37 @@
+Basic commands----
+ls-List files and directories 
+cd-Change directory
+mkdir-Create a new directory 
+rm-remove files or directories
+cp-copy files or directories
+mv- move or rename fies or directories
+cat-display file content
+nano or vim-text editors for creating or editing files
+
+navigation-learn how to navigate through directories using cd and list their contents with ls
+
+File Manipulation- practice creating copying , moving, deleting files and directories.
+
+TextEditing- Learn to use command-line text editor like Nano or Vim. start with Nano if your new to text editors. These are powerful tools for editing code configuration files and  more.
+
+Using pipelines: Understand how to use pipes (|) to combine the output of one command as the input of another.
+
+ls| grep.txt
+
+Understand Redirection: learn how to redirect input and output using  >,>>,< and| 
+ls>file_list.txt
+
+Shell Customization- customize your shell environment by editing your shell configuration file(usually .bashrc or zshrc) you can set aliases,
+environment variables and customize the prompt.
+
+Scripting: start learning shell scripting Bash (Bourne Again Shell) is a common choice.it allows you to automate tasks create complex scripts and enhance your workflow.
+version control- learn how to use version control system like git from the command line this allow you to manage  your projects efficiently and collaborate with others.
+----------------------------------------
+Process Monitoring- 
+process monitoring tools like Task Manager on windows or Activity Monitor on Mac Keep track of all the processes running on your computer. They show you which processes are using a lot of resources like CPU or memory so you can spot any problems and fix them if needed.
+
+
+use in cloud computing:
+
+in cloud co
+---------------------------------------------------------

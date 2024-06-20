@@ -1,0 +1,35 @@
+SERVERS:
+
+A server is a computer or a system that provides functionality or resources to other deivces know as clients within a network. Servers are designed to handle requests from clients and deliver the requested data applications or services over the network.
+
+some common types of servers:
+
+1 web server: A web server hosts websites and serves web pages to users who request them through their web browsers. Popular web servers include Apache HTTP server, Nginx and Microsoft internet  information services.
+
+2 File Server- A file server stores and manages files that can be accessed and shared by multiple users within a network. it provides centralized storge for documents, media files and other data.
+
+3. Database Server: A database server hosts database management systems DBMS such as MySQL,PostgreSQL or microsft sql server. it stored and manages the databses allowing clients to retrive modify and query stored in  the datbases.
+
+4.Application Server: An application server hosts and runs applications that provide specific functions or services to users or other applications. it can handel tasks such as data processing, business logic execution and coomunication with other system .
+
+5 Email Server  : An email server manages the sending receiving and storage of email  messages. It include components such as SMTP for sending emails and IMAP or POP3 and accessing emails.
+
+6 Print Server: A print server manages printing tasks within a network, allowing users to send print jobs to network printers.
+
+------------------------------
+Nginx server explations:
+
+Just like a professional party planner Nginx is super organized and knows how to handel a big crowd. IT designed to efficiency manage incoming requests and make sure everyone gets what they need without chaos.
+
+Before  the party starts you sists down with your party planner and decide how everything will be set up. This is like configuring Nginx. You specify rules for how requests should be handeled where  different types of guests should go ()and how resources should be managed.
+
+Your Gatekeeper (Reverse Proxy): At your block party, you might have multiple entrances, each with a gatekeeper directing guests to different areas. Nginx can act as a reverse proxy, directing incoming requests to the appropriate backend servers or services based on the rules you've set up. It's like having a smart gatekeeper who knows exactly where to send each guest as they arrive.
+
+Your Speedy Waiter (Load Balancer): Sometimes, the line at the food table gets really long, and it's hard for one waiter to keep up. Nginx can act as a load balancer, distributing incoming requests across multiple backend servers to ensure everyone gets served quickly. It's like having multiple waiters serving food so no one has to wait too long.
+
+Your Security Guard (Security Features): You want to make sure your party stays safe and secure. Nginx comes with various security features like access control, SSL/TLS encryption, and rate limiting to protect your website or application from malicious attacks and unauthorized access. It's like having a vigilant security guard keeping an eye out for troublemakers.
+
+
+
+Your Cleanup Crew (Caching and Optimization): After the party's over, there's always a mess to clean up. Nginx can help speed up future parties by caching content and optimizing performance. It remembers frequently accessed resources and serves them up quickly, reducing the load on backend servers and improving overall speed and efficiency.
+So, in summary, Nginx is like a super organized party planner for your website or application, efficiently managing incoming requests, directing traff                                                                                                                                                                                                                             ic, balancing loads, keeping things secure, and optimizing performance to ensure a smooth and enjoyable experience for all your guests (or website visitors).

@@ -1,0 +1,72 @@
+Logic of two pages functionality with spring boot  for product save 
+
+solution:
+
+To acheive the functionality you will need to create two seperate pages one for the form submission and another for  displaying the  photo and name 
+
+step1:  create a enity class 
+this class represent the data structure for your form 
+
+@Entity
+public class User{
+@Id
+@GenerateValue(lstratergy = GenerationType.IDENTITY)
+ private Long id;
+ private String name;
+ private String address;
+ private String phoneNumber;
+ Private String photoPath;  // Store the path to the phot file 
+ // Getters and setters methods of all this 
+}
+
+Step2: Create a Repository Interface
+       This interface will handel  CRUD operations for the User entity 
+
+       public interface UserRepository extends JpaRepository<User,Long>
+{
+//Spring Dta JPA  provides CRUD methods
+}
+
+Step3. Create a Service class : This class contains the  bussiness logic
+  
+ @Service 
+ public class UserService{
+  @Autowired
+  private UserRepository userRepository;
+  public User saveUser(User user){
+ return userRepository.save(user);
+}
+public User getUserById(Long id){
+return userRepository.findById(id).orElse(null);
+}
+//others necessary service methods 
+}
+
+steps 4.  Create a controller class:
+
+@Controller 
+public class UserController{
+ @Autowired 
+ private UserService userservice;
+ 
+ @GetMapping("/form")
+ public String showForm(Model model){
+  model.addAttribute("usetr",new User());
+  return "form";
+}
+@PostMapping("/form")
+ public  String submitForm(@ModelAttribute User user,@RequestParam("file") MultipartFile file){
+String photoPath=savePhoto(file);
+user.setPhotopath(photoPath);
+
+userService.saveUser(user);
+return "redirect:/profile/" +user.getId();
+
+}
+@GetMapping("/profile/{id}")
+public String showProfile(@PathVariable Long id, Model model){
+User user =userSerivce.getUserById(id);
+model.addAttribute("user",user);
+ return "profile";
+}
+}

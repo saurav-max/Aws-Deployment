@@ -1,0 +1,32 @@
+DevOps tools
+
+Docker helps you package and ship applications consistently.
+
+Kubernates helps you to manage and scale those packaged applications across a cluster  of machines.
+
+Jenkins- helps you to automate the process of building,testing and deploying you applications making your development and deployment workflow smoother and more efficient.
+
+monolithic kernel- it is a mayor of a city 
+
+what is monolithic kernel-- 
+
+everything the os needs to function like device drivers,file system,memory \management and process scheduling is bundled together tightly into a single, large piece of software. It is like having all the city department in one massive office building.
+
+How does it works?
+when your computer boots up the monolithic kernel loads into memory and its responsible for directly handling system calls and managing resources. if a program needs to acces a file for example it sends a request to the kernel which then handels the request and communicates with the appropriate hardware or software component.
+
+pros and cons- the monoithics approach has its strengths and weakness on the plus side because everything is tightly integratedcommunication between different parts of the kernel is fast and efficient. However the downside is that if something goes wrong is one part of the kernel it can affect the entire system potentially leading to crashes or instability.
+
+some examples of operating system that use a monolithic kernel include LINUX , UNIX and older versions of windows like window 95 and window 98 
+
+
+monolithics kernel is llike a mayor who prefer to keep all the city functions centralized , managing everything from a single integrated piece of software, it has its advantages in efficiency but also carries risks of system wide failures.
+
+------------------------
+
+Debian and Ubuntu-
+
+Debian- it is one of the oldest and most respected Linux distributins. Its known for its stability adherence to free software principles and community driven development process. Debian serves as the foundation fr many other Linux distributins including Ubuntu.
+
+Ubuntu- It is a linuc distributions includeing
+

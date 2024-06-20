@@ -1,0 +1,44 @@
+
+epam 3 years experience:::
+
+singleton class ?
+saga pattern?
+how we create singleton class or is he thread?
+how to create thread shape singleton using double cheak locking?
+why main method is public and static?
+can we override main method?
+searlized data? Why we don't store in text file?
+serizable class contain a member?
+transient keyword?
+how does garbage collection work in java?
+does finalize keyword has role in garbage collection?
+what algorithm does jvm use for garbage collection?
+how memory leaks occur in java?old generation and young generation memory?
+how to ensure code quality with projects you working?
+how to integrate sping boot with my sql database?
+how to modify  existing spring boot application  to convert it into serverless 
+how spring boot take decision which server to use?-based on class path dependency
+how to handel exception in rest application in spring boot?
+how to handel multiple beans of same type in spring? by  using qualifier annotation 
+what is spect oriented programming 
+
+Infosys 3 year experience:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

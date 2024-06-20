@@ -1,0 +1,65 @@
+AWS COMPLETE-
+
+How to deploy spring boot on AWS---
+
+on cloud AWS
+
+Amazon EC2 in which it provide virtual computer 
+
+AWS elastic Beanstalk it  manages automatically you just have to upload the code it automatically provide tech stack 
+
+Amazon RDS- Relational database
+
+Amazon Route 53-
+
+ Domain name  web service . it is designed to give developers and business an extremely reliable and cost effective way to route  end users to internet applications by translating names like www.example.com in to the numeric ip address like 192.0.2.1 that computers to connect to each other.Amazon Route 53 is fully complaint with IPV6 as
+
+Amazon S3 is just a storage for big 
+
+TO SIGN UP 
+AWS console> my account> create new aws account>after sign up verification and then account activate.
+
+
+--------------------------
+Managing different environment//setting up MySQL on AWS
+PACKAGING spring boot application 
+development environment  
+---------------------------
+Development environment --make a  file name application-dev.properties and this file we write the 
+db configuration
+
+now  same with prod file
+--------------------------------------------------------
+
+Amazon VPC--
+IT IS A virtual network dedicated to your aws to launch your ec2 instances basically it related subnet and only vpn subnet.
+public,private,vpn only>subnets
+in availability zone you can create more than one subnet.
+in subnet there are instances that belongs to  virtual private cloud called vpc
+
+IG-Internet Gateway-THROUGH INTERNET GATEWAY WE CAN COMMUNICATE WITH INTERNET
+
+VPG- THROUGH VPG WE COMMUNICATE WITH OUR CORPORATE NETWRORK 
+
+if one my subnet traffic is routed to the internet gateway then we can say is public subnet.
+
+if the subnet traffic is not routed to the internet gateway then we say is private gateway.
+
+if the subnet traffic is not routed to internet gateway but routed to particular or like in case virtual private gateway then is called vpn only.
+
+------------------------------
+
+practical --
+
+it is like cloud inside the cloud it is important for security purpose here is the option the control the traffic.
+
+create vpc then name as test vpc /range:
+
+
+
+
+
+
+
+
+

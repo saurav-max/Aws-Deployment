@@ -1,0 +1,73 @@
+
+Certainly! Here's an example of how you can implement an API for order tracking using Spring Boot and Kafka:
+
+1 Define the kafka event model :
+
+public class OrderStatusEvent{
+private String orderId;
+private String status;
+//constructors, getters, setters
+
+}
+
+2 Kafka Producer Configuration
+
+@Configuration
+public class KafkaProducerConfig {
+
+    @Bean
+    public ProducerFactory<String, OrderStatusEvent> producerFactory() {
+        Map<String, Object> configProps = new HashMap<>();
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        return new DefaultKafkaProducerFactory<>(configProps);
+    }
+
+    @Bean
+    public KafkaTemplate<String, OrderStatusEvent> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
+    }
+}
+
+3 Kafka producer 
+
+@Service
+public class KafkaOrderStatusProducer {
+
+    private static final String TOPIC = "order_status_events";
+
+    @Autowired
+    private KafkaTemplate<String, OrderStatusEvent> kafkaTemplate;
+
+    public void sendOrderStatusEvent(OrderStatusEvent event) {
+        kafkaTemplate.send(TOPIC, event.getOrderId(), event);
+    }
+}
+
+4 Rest Controller
+
+@RestController
+@RequestMapping("/api/orders")
+public class OrderController {
+
+    @Autowired
+    private KafkaOrderStatusProducer kafkaOrderStatusProducer;
+
+    @PostMapping("/{orderId}/status")
+    public ResponseEntity<?> updateOrderStatus(@PathVariable String orderId, @RequestBody String status) {
+        // Validate orderId and status
+
+        OrderStatusEvent event = new OrderStatusEvent(orderId, status);
+        kafkaOrderStatusProducer.sendOrderStatusEvent(event);
+
+        return ResponseEntity.ok().build();
+    }
+}
+
+The KafkaOrderStatusProducer class encapsulates logic for sending order status events to kafka topic.
+
+The OrderController exposes REST endpoint - Post/api/orders/{orderId}/status for updating the order status when a post request is received it publishes an order status event to the kafka topic.
+
+You would need to set up kafka in your springboot Application and provide the necessary kafka configuratins 
+

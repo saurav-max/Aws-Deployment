@@ -1,0 +1,105 @@
+Basic steps to developing software-
+
+Analysis: identify the requirement of the client 
+Design- architect the entire system
+Development-develop components, function and features
+Testing-ensure that the code developed produces correct results.
+Maintenance-develop a maintenance agreement and plan 
+
+Popular development Methodologies-
+The agile method includes framework such as scrum crystal extereme programming and feature driven development
+
+DeVops centers on organizational change that enhances collaboration between teams
+
+THE Waterfall method is a stepped linear model made up of sequential phases where each phase is a complete part of the whole 
+
+
+SDLC MODELS-
+Waterfall :linear and sequential
+iterative: somewhat cyclical
+Spiral: top down and bottom up 
+V-Shaped- early testing.
+Agile -most popular and includes several iterations
+
+Waterfall model-
+for any phase in the development process to begin the previous must be completed first except the first phase.
+
+Iterative Model--
+with  this model it is possible to devlop using repeated cycles and shorter durations . Advantages including learning through development earlier parts of versions of the system.
+
+Spiral Model-
+This model attempts to join features of the incremental and waterfall models. It is combination of top down and bottom up designs.
+
+V-shaped-
+This model takes the waterfall model to the next level . there is a heavy focus on the testing in the model which gives rise to the V SHAPE At the end of the project, the product is well tested.
+
+Agile Methods refine the process into small incremental builds or iterations with a focus on customer satisfaction.
+-------------------------------------------------------
+
+waterfall model---- Requirement gathering and analysis>system design>implementation>testing>system deployment> maintenance
+
+Advantages--
+simple and easy to understand
+management is also simple each phase is well defined and deliverable can be verified
+
+steps are well defined and documented there is no confusion between phases
+
+when to use the waterfall method model---
+it is possible to use the waterfall model in any of these situations
+requirement are clear not likely to change
+The product itself is well understood 
+Technology being used is familiar to  the team 
+moving an existing product to anew OS
+
+Incremental Model-- Requirements>Analysis>Design>Coding>Sostware product increment1 and then iteration again start.
+
+Advantages and disadvantages of the iterative model ----
+the first deliverable is produced quickly 
+end users can analyE the product at an earlier stage than the waterfall model
+some cost savings
+ since each increment produces some thing that can be seen customes are more satisfied that progress is being made.
+customers feedback can be accounted for as each  increment is developed.
+
+Disadvantages-
+Each  increment must ne designed and planned 
+due to the nature of the increments not all facts may be siclosed up front 
+as each stage is planned overlapping may not be allowed 
+problems appearing downstream  may be harder to fix than those that appear early.
+
+when can we  use this model 
+It is possible to use the iterative incremental model in any  of these use.
+
+Spiral model--
+Mitigating risk is at the heart of this model. tHIS MODEL IS SAN EXTENSION OF the waterfall model where risk is analyzed and a prototype is acheib=ved earlier than in traditional waterfall model.
+
+Spiral model phases- planning
+                    -risk	
+                    -Evaluation
+                    -Engineering
+Advantages-
+Spiral Models are excellent for large complex projects.
+This model is known for its risk mitigation ]
+customers can watch in real time as their product is developed 
+This model is not as rigid as the waterfall model requirement can be changed and accommodated.
+
+Disadvantages-
+This model can be costly if not planned properly
+with so much emphasis on risk there may be additional costs as experts may be needed
+in order to  mitigate cost overruns the model must follow strict guidelines 
+There is the possibility of over documenting the process
+Not suitable for smaller projects due to the upfronts costs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

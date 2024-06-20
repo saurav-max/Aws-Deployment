@@ -1,0 +1,41 @@
+Hashing Algorithm-
+hash collision
+signature match in hash
+change the bite 
+if hashes is low no one is use it but if it is fast then it is used by anyone because fast enough.
+hashing Collison 
+sha2 and sha3 is now using to storing password h
+hash function 
+it is used in cryptography mainly use n digital signature.
+bites in hash function 
+it is pseudo random 
+-----
+SHA 1 is 160 bits long
+it is developed by NSA
+512 bits length 
+lets takes it 
+h0 h1 h2 h3 h4 all have 4 bits 
+SHA1  is cryptographic hash function that takes a string as an input and generates a hash value of 160 bit  or 20 bytes . The hash value is generally
+called a message digest. This message digest is generally altered into a 40 decimal long hexadecimal value.
+it is modified version of MD5  and used for hashing data and certificates. 
+A hashing algorithm shortens the input data into a smaller form that cannot be understood by using bitwise operations modular additions and compression function.
+
+Use of hashing  algorithm in backend:
+Database Indexing Hashing is used to index and retrieve data efficiently in databases and other data storage systems. Password storage: Hashing is used to store passwords securely by applying  a hash function to the password and storing the hashed result rather than the plain text.
+
+need of it -----
+Hashing protects data at rest. so even if someone gains access to your server the items stored there remain   unreadable . Hashing can also help you prove that data isn't adjusted or altered after the author is finished with it., And some people use hashing to help them make sense of reams of data.
+
+purpose of hashing in database-
+In this scenario hash codes generate an index to store values. So here hashing is used to index and retrieve information from a database because it helps accelerate the process; it is much easier to find an item using its shorter hashed key than its original value.
+
+Hashing is applicable to data searching and retrieving, digital signatures, cybersecurity, and cryptography, among many other applications.
+
+
+SHA1 working ------
+
+SHA 1 is based on the design principles of MD4 first THE INOUT MESSAGE IS PADDED AND S-PLIT INTO 512 BIT MWSSAGE BLOCKS. An 80 step compression function is then applied to each of this blocks. It has two types of inputs, the first one is a chaining input of 160 bits and the second one is message input of 512 bits. Let g(m,h) denote the compression function with message input M and chaining input h. The chaining input h(n+1) for thr next compression is calculated by h(n) + g(m,h(n)), called feed forward. The chaining variables for the first iteration are set to fixed values . The compression function basically consist of two parts: the message expansion and the state update transformation.
+In SHA-1 the message expansion and the state update transformation.
+
+In SHA-1 the message expansion and the state update transformation.
+

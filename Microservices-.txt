@@ -1,0 +1,18 @@
+Microservices-
+
+components- Databses,message broker, languages, monitoring, CI/CD , Security,  , cloud provider , container orchestration , containers 
+s
+Monitoring in Microservices:=  Monitoring microservices provides the following benefits, All system fsil eventually but the performance degradation is often gradual. Monitoring can detect these degraded states and alert system owners to prevent total failure.
+
+Continious Monitoring in Microservices.---
+
+Continious monitoring is an approach where an organization constantly monitors its system and networks to detect security therets performance issues, or non- compliance problems in an automated manner. The goal is to identify potential problems and the  real time to address them quickly.
+
+
+Montitoring is the collection and analysis of adata to detect problems or anomalies in a system or application. This data comes from metrices, logs and alerts and focuses  on specific things that can be tracked over time.
+
+As your microservices grows so do your monitoring needs. The last thing you want is a tool that cant  keep up with load make sure your monitoring system can go down without bringing down your microservices.
+
+It needs to collect the right data and analyze it. Look carefully at the data the tool collects and how it presents that information.
+
+A robust monitoring toll collects and how it presents that information. A robust monitoring tool collects and analyzes data from every nook and cranny of a distributed system but it shouldn't overhelm you with m=noisy irrevelent information. IT should provide you with compreshensive insights that deserve to be called insights include performance metrices logs and traces.
